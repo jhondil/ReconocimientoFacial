@@ -8,6 +8,10 @@ from PIL import Image, ImageTk
 import  imutils 
 import math
 
+def Login():
+    print("HOla")
+def Register():
+    print("HOla")
 
 
 OutFolderPathUser="E:/PC-MIO/estudio/proyecto-python/reconocimiento_facial/DataBase/Users"
@@ -48,6 +52,30 @@ InputPasswordRegisterLabel = Label(screen,text="Password")
 InputPasswordRegisterEntry = Entry(screen)
 InputPasswordRegisterLabel.place(x=200,y=380)
 InputPasswordRegisterEntry.place(x=200,y=400)
+
+##read data from user log
+
+InputUserLoginLabel = Label(screen,text="User")
+InputUserLoginEntry = Entry(screen)
+InputUserLoginLabel.place(x=700,y=280)
+InputUserLoginEntry.place(x=700,y=300)
+#Pass
+InputPasswordLoginLabel = Label(screen,text="Password")
+InputPasswordLoginEntry = Entry(screen)
+InputPasswordLoginLabel.place(x=700,y=480)
+InputPasswordLoginEntry.place(x=700,y=500)
+
+
+###buttons
+#register
+butonRegisterImage=PhotoImage(file="E:/PC-MIO/estudio/proyecto-python/reconocimiento_facial/setUp/buton_register.png")
+ButtonRegister = Button(screen,image=butonRegisterImage,command=Register,height="167",width="320")
+ButtonRegister.place(x=200,y=500)
+
+#login
+butonLoginImage=PhotoImage(file="E:/PC-MIO/estudio/proyecto-python/reconocimiento_facial/setUp/buton_login.png")
+ButtonLogin = Button(screen,image=butonLoginImage,command=Login,height="167",width="320")
+ButtonLogin.place(x=700,y=550)
 
 
 screen.mainloop()
