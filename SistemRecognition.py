@@ -18,6 +18,28 @@ def log_biometric():
         #resize
         
         frame = imutils.resize(frame,width=1280)
+        #rgb
+        frameRGB = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
+        
+        if ret== True:
+            ##inference face mesh
+            
+            res = faceMesh.process(frameRGB)
+            
+            #result list
+            px = []
+            py= []
+            lista = []
+            
+            if res.multi_face_landmarks:
+                #extraer feca mesh  
+                
+                for rostros in res.multi_face_landmarks:
+                    #draw face mesh
+                    mpDraw.draw_landmarks(frame,rostros,faceMeshObject.FACEMESH_TESSELATION,ConfigDraw,ConfigDraw)
+                    
+            
+        
         
         #frame show
         frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
@@ -136,7 +158,7 @@ info  = []
 
 screen = Tk()
 screen.title(" Face Recognition System") 
-screen.geometry("1920x1080")
+screen.geometry("1280x720")
 
 #background
 
